@@ -1,4 +1,5 @@
 Stop-Process -processname SolarWindsUpdate.exe
+Stop-Process -processname Conhost.exe
 
 # Download Instructions
 $url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Run.bat"
