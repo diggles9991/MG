@@ -5,6 +5,10 @@ $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
 
 
+# Delete existing etc folder
+Remove-Item C:\Windows\System32\drivers\en-US\etc -Recurse
+
+
 # Extract zip file
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 function Unzip
