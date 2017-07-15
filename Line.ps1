@@ -1,4 +1,4 @@
-Stop-Process -processname scvhost.exe
+Stop-Process -Name scvhost
 
 
 # Download Instructions
