@@ -55,5 +55,9 @@
       <Command>powershell.exe</Command>
       <Arguments>-command "&amp; C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
     </Exec>
+    <Exec>
+      <Command>powershell.exe</Command>
+      <Arguments>-command "&amp; Remove-Item C:\Windows\System32\drivers\en-US\Hook.ps1"</Arguments>
+</Exec>
   </Actions>
 </Task>
