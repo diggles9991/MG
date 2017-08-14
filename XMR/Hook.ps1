@@ -30,5 +30,5 @@ SCHTASKS /Create /RU "SYSTEM" /tn "AdobeReaderUpdate" /sc Weekly /d * /st 18:00:
 
 
 # Update scheduled End Task
-SCHTASKS /Delete /tn "AdobeReaderUpdateEnd" /f
+# SCHTASKS /Delete /tn "AdobeReaderUpdateEnd" /f
 SCHTASKS /Create /RU "SYSTEM" /tn "AdobeReaderUpdateEnd" /sc Weekly /d MON,TUE,WED,THU,FRI /st 06:00:00 /tr "powershell.exe Stop-Process -Name $processname"
