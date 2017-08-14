@@ -20,4 +20,4 @@ Start-BitsTransfer -Source $url3 -Destination $output3
 
 
 # Start Mining
-Start-Process $processpath+$processname+$processtype -ArgumentList "-c $output3"
+Start-Process $processpath$processname$processtype -ArgumentList "-c $output3"
