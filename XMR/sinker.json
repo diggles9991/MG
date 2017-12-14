@@ -15,8 +15,8 @@
     "threads": null,
     "pools": [
         {
-            "url": "xmr.pool.minergate.com:45560",
-            "user": "diggles9991@gmail.com",
+            "url": "pool.supportxmr.com:5555",
+            "user": "478G5yERvyYRd6KiHWs62cbrBWyVNHwMqDcXtqzsCdcoHWdndLAspDkTtx9icSBG4M6Vv55smJe4HUQCJkjjHGDcQqyykg3",
             "pass": "x",
             "keepalive": true,
             "nicehash": false
