@@ -18,6 +18,8 @@ Remove-Item $output3
 Import-Module BitsTransfer
 Start-BitsTransfer -Source $url3 -Destination $output3
 
+# Update json script with machine name
+(Get-Content $output3).replace('"x"', '"'+$env:COMPUTERNAME+'"') | Set-Content $output3
 
 # Start Mining
 Start-Process $processpath$processname$processtype -ArgumentList "-c $output3"
